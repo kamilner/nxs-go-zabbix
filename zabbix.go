@@ -92,6 +92,15 @@ func (z *Context) Login(host, user, password string) error {
 	return nil
 }
 
+// SetContext allows an API key to be specified
+func (z *Context) SetContext(host, apiKey string) error {
+
+	z.host = host
+	z.sessionKey = apiKey
+
+	return nil
+}
+
 // Logout destroys the Zabbix session
 func (z *Context) Logout() error {
 
