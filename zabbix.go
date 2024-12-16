@@ -58,7 +58,6 @@ type requestData struct {
 	JSONRPC string      `json:"jsonrpc"`
 	Method  string      `json:"method"`
 	Params  interface{} `json:"params,omitempty"`
-	Auth    string      `json:"auth,omitempty"`
 	ID      int         `json:"id"`
 }
 
@@ -125,7 +124,6 @@ func (z *Context) request(method string, params interface{}, result interface{})
 		JSONRPC: "2.0",
 		Method:  method,
 		Params:  params,
-		Auth:    z.sessionKey,
 		ID:      1,
 	}
 
@@ -154,6 +152,7 @@ func (z *Context) httpPost(in interface{}, out interface{}) (int, error) {
 
 	// Set headers
 	req.Header.Add("Content-Type", "application/json-rpc")
+	req.Header.Add("Authorization", z.sessionKey)
 
 	// Make request
 	res, err := http.DefaultClient.Do(req)
