@@ -8,7 +8,7 @@ At the time not all Zabbix API methods are implemented, but work in progress.
 ## Install
 
 ```
-go get github.com/nixys/nxs-go-zabbix/v5
+go get github.com/kamilner/nxs-go-zabbix/v5
 ```
 
 ## Example of usage
@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nixys/nxs-go-zabbix/v5"
+	"github.com/kamilner/nxs-go-zabbix/v5"
 )
 
 func zabbixLogin(z *zabbix.Context, zbxHost, zbxUsername, zbxPassword string) {
