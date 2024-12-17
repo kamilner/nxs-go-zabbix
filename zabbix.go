@@ -152,7 +152,7 @@ func (z *Context) httpPost(in interface{}, out interface{}) (int, error) {
 
 	// Set headers
 	req.Header.Add("Content-Type", "application/json-rpc")
-	req.Header.Add("Authorization", z.sessionKey)
+	req.Header.Add("Authorization", "Bearer "+z.sessionKey)
 
 	// Make request
 	res, err := http.DefaultClient.Do(req)
