@@ -99,7 +99,7 @@ func (z *Context) HistoryGet(params HistoryGetParams) (interface{}, int, error) 
 	case HistoryObjectTypeText:
 		result = &([]HistoryTextObject{})
 	default:
-		return nil, 0, fmt.Errorf("Unknown history type")
+		return nil, 0, fmt.Errorf("unknown history type")
 	}
 
 	status, err := z.request("history.get", params, result)

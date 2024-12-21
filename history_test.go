@@ -4,10 +4,10 @@ import (
 	"testing"
 )
 
-const (
-	testHistoryItemID = 45503
-	testHistoryType   = 0
-)
+// const (
+// 	testHistoryItemID = 45503
+// 	testHistoryType   = 0
+// )
 
 func TestHistoryCRUD(t *testing.T) {
 
