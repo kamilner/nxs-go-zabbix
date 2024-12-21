@@ -70,6 +70,9 @@ type ItemObject struct {
 	SNMPTrapV1OID1       string              `json:"snmptrap_v1_oid1,omitempty"`
 	PreprocessingSteps   []PreprocessingStep `json:"preprocessing_steps,omitempty"`
 	IsItemPrototype      bool                `json:"is_item_prototype,omitempty"`
+	LastClock            int                 `json:"lastclock,omitempty"`
+	LastNS               int                 `json:"lastns,omitempty"`
+	LastValue            string              `json:"lastvalue,omitempty"`
 }
 
 // QueryField represents a query field object.
