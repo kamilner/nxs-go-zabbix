@@ -155,7 +155,7 @@ type HostObject struct {
 	Macros          []UsermacroObject     `json:"macros,omitempty"`
 	Templates       []TemplateObject      `json:"templates,omitempty"`       // Used for `create` operations
 	ParentTemplates []TemplateObject      `json:"parentTemplates,omitempty"` // Used to store result for `get` operations
-	Inventory       []HostInventoryObject `json:"inventory,omitempty"`
+	Inventory       HostInventoryObject   `json:"inventory,omitempty"`
 }
 
 // HostTagObject struct is used to store host tag
