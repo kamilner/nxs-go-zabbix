@@ -155,21 +155,28 @@ type HostObject struct {
 	Macros          []UsermacroObject     `json:"macros,omitempty"`
 	Templates       []TemplateObject      `json:"templates,omitempty"`       // Used for `create` operations
 	ParentTemplates []TemplateObject      `json:"parentTemplates,omitempty"` // Used to store result for `get` operations
+	Inventory       []HostInventoryObject `json:"inventory,omitempty"`
 }
 
 // HostTagObject struct is used to store host tag
 //
 // see: https://www.zabbix.com/documentation/5.0/manual/api/reference/host/object#host_tag
 type HostTagObject struct {
+	Id    string `json:"id,omitempty"`
 	Tag   string `json:"tag"`
 	Value string `json:"value,omitempty"`
 
 	Operator int `json:"operator,omitempty"` // Used for `get` operations, has defined consts, see above
 }
 
-// HostGetParams struct is used for host get requests
+// HostInventoryObject struct is used to store host Inventory objects
 //
-// see: https://www.zabbix.com/documentation/5.0/manual/api/reference/host/get#parameters
+// see: https://www.zabbix.com/documentation/5.0/en/manual/api/reference/host/object#host-inventory
+type HostInventoryObject struct {
+	Property string `json:"property"`
+	Value    string `json:"value,omitempty"`
+}
+
 type HostGetParams struct {
 	GetParameters
 
@@ -215,7 +222,7 @@ type HostGetParams struct {
 	// SelectHostDiscovery   SelectQuery `json:"selectHostDiscovery ,omitempty"` // not implemented yet
 	// SelectHTTPTests       SelectQuery `json:"selectHttpTests,omitempty"` // not implemented yet
 	SelectInterfaces SelectQuery `json:"selectInterfaces,omitempty"`
-	// SelectInventory       SelectQuery `json:"selectInventory,omitempty"` // not implemented yet
+	SelectInventory  SelectQuery `json:"selectInventory,omitempty"`
 	// SelectItems           SelectQuery `json:"selectItems,omitempty"` // not implemented yet
 	SelectMacros          SelectQuery `json:"selectMacros,omitempty"`
 	SelectParentTemplates SelectQuery `json:"selectParentTemplates,omitempty"`
