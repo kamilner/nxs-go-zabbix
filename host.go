@@ -148,7 +148,7 @@ type HostObject struct {
 	TLSPSKIdentity    string `json:"tls_psk_identity,omitempty"`
 	TLSPSK            string `json:"tls_psk,omitempty"`
 
-	Groups          []HostgroupObject     `json:"groups,omitempty"`
+	HostGroups      []HostgroupObject     `json:"hostGroups,omitempty"`
 	Interfaces      []HostinterfaceObject `json:"interfaces,omitempty"`
 	Tags            []HostTagObject       `json:"tags,omitempty"`
 	InheritedTags   []HostTagObject       `json:"inheritedTags,omitempty"`

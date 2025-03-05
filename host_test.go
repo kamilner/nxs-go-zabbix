@@ -41,12 +41,12 @@ func TestHostCRUD(t *testing.T) {
 
 func testHostCreate(t *testing.T, z Context, hgCreatedIDs, tCreatedIDs []int) []int {
 
-	var groups []HostgroupObject
+	var hostGroups []HostgroupObject
 	var templates []TemplateObject
 
 	// Add groups to host
 	for _, e := range hgCreatedIDs {
-		groups = append(groups, HostgroupObject{
+		hostGroups = append(hostGroups, HostgroupObject{
 			GroupID: e,
 		})
 	}
@@ -60,9 +60,9 @@ func testHostCreate(t *testing.T, z Context, hgCreatedIDs, tCreatedIDs []int) []
 
 	hCreatedIDs, _, err := z.HostCreate([]HostObject{
 		{
-			Host:      testHostName,
-			Groups:    groups,
-			Templates: templates,
+			Host:       testHostName,
+			HostGroups: hostGroups,
+			Templates:  templates,
 			Interfaces: []HostinterfaceObject{
 				{
 					IP:    testHostIP,
