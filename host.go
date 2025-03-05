@@ -286,7 +286,7 @@ type HostGetParams struct {
 	// SelectDiscoveries     SelectQuery `json:"selectDiscoveries,omitempty"` // not implemented yet
 	// SelectDiscoveryRule   SelectQuery `json:"selectDiscoveryRule ,omitempty"` // not implemented yet
 	// SelectGraphs          SelectQuery `json:"selectGraphs,omitempty"` // not implemented yet
-	SelectGroups SelectQuery `json:"selectGroups,omitempty"`
+	SelectHostGroups SelectQuery `json:"selectHostGroups,omitempty"`
 	// SelectHostDiscovery   SelectQuery `json:"selectHostDiscovery ,omitempty"` // not implemented yet
 	// SelectHTTPTests       SelectQuery `json:"selectHttpTests,omitempty"` // not implemented yet
 	SelectInterfaces SelectQuery `json:"selectInterfaces,omitempty"`
